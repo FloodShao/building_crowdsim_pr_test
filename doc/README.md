@@ -38,7 +38,7 @@ Crowd simulation can be defined into 2 sub-problems: global path plan, and local
 
 ## Navmesh (connection graph)
 ### Human Lanes
-The detailed introduction of navmesh (Menge has its own navmesh definition) can be found in [to be updated](). Basically, navmesh defines lots of nodes (geometrically convex polygon) connected with each other with edges (geometrically the common edge between adjecent nodes), and some obstacles (geometrically another type of edge with only one node).
+The detailed introduction of navmesh (Menge has its own navmesh definition) can be found in [menge_navmesh](./navmesh_doc.md). Basically, navmesh defines lots of nodes (geometrically convex polygon) connected with each other with edges (geometrically the common edge between adjecent nodes), and some obstacles (geometrically another type of edge with only one node).
 For a generalization purpose, in crowd simulation, the navmesh is generated from the human lanes with predefined width.
 
 In traffic-editor, the human lanes can be edited under the *Crowd_Sim* Edit mode by clicking the *add human lane* button. The "edge_type" (defined in traffic_editor gui) of human lanes is "human_lane" with default "graph_idx" of 9 (make sure you are in the right graph_idx when select the human lanes). Additional property of "width" is added in the edge params with default value of 1.0. You can easily change the width of the human lane, the width of the lane drawing will change accordingly. 
