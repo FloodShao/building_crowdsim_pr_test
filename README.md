@@ -15,7 +15,7 @@ repositories:
     version: master
   rmf/traffic_editor:
     type: git
-    url: https://github.com/FloodShao/traffic_editor.git
+    url: https://github.com/osrf/traffic_editor.git
     version: master
   rmf/rmf_demos:
     type: git
