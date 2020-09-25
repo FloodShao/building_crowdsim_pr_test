@@ -59,6 +59,8 @@ In Menge, a goal set includes multiple goals, and a goal set is related with a s
 ![human_goals](./figs/human_goals.png)
 
 ## FSM configuration (Global path plan)
+Basic introduction of two required files for Menge to configure the crowd simulation can be found in [menge_required_files](./menge_required_files.md)
+
 A *crowd_sim* panel is created in traffic-editor. You can define the configuration of the crowd simulation in this panel. Make sure you have updated all the human lanes and the "human_goal_set_name" for all the lane vertices first.
 ![crowd_sim_panel](./figs/crowd_sim_panel.png)
 
