@@ -32,7 +32,8 @@ repositories:
 ```
 
 ## Steps:
-1. Make sure you have the actor model `model://MaleVisitorPhone` in `~/.gazebo/models`. This is the default actor we are using in this repo. You can find this model in <https://app.ignitionrobotics.org/OpenRobotics/fuel/models/Male%20visitor>
+1. Make sure you have the actor model `model://MaleVisitorPhone` in `~/.gazebo/models`. This is the default actor we are using in this repo. You can find this model in (MaleVisitorPhone)[./models/MaleVisitorPhone]
+Or you can find in here <https://app.ignitionrobotics.org/OpenRobotics/fuel/models/Male%20visitor>
 
 2. `colcon build` the whole workspace
 
