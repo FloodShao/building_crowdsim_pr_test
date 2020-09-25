@@ -17,7 +17,7 @@ crowd_sim:
     - {capacity: 5, set_area: [crossing], set_id: 5}
     - {capacity: 5, set_area: [on_road], set_id: 6}
   model_types:
-    - {animation: walk, animation_speed: 0.5, init_pose: [0, 0, 0, 0, 0, 0], model_uri: model://MaleVisitorPhone, typename: human}
+    - {animation: walk, animation_speed: 0.3, init_pose: [0, 0, 0, 0, 0, 0], model_uri: model://actor, typename: human}
   obstacle_set: {class: 1, file_name: L1_navmesh.nav, type: nav_mesh}
   states:
     - {final: 1, goal_set: -1, name: external_static, navmesh_file_name: ""}
@@ -36,7 +36,7 @@ crowd_sim:
     - {Condition: {distance: 1, type: goal_reached}, Target: [{name: crossing, weight: 1}, {name: external_static, weight: 1}, {name: hub_east, weight: 1}], from: hub_north, to: ""}
     - {Condition: {distance: 1, type: goal_reached}, Target: [{name: crossing, weight: 1}, {name: hub_north, weight: 1}, {name: on_road, weight: 1}], from: hub_east, to: ""}
     - {Condition: {condition1: {distance: 1, type: goal_reached}, condition2: {dist: c, per_agent: true, type: timer, value: 30}, type: or}, Target: [{name: crossing, weight: 1}, {name: hub_east, weight: 1}], from: on_road, to: ""}
-  update_time_step: 0.5
+  update_time_step: 0.1
 levels:
   L1:
     doors:
