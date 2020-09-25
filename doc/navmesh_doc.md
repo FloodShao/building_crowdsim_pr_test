@@ -116,8 +116,3 @@ The construction logic is:
 There are few special cases:
 1. 2 lanes intersects 1 lane vertex, circulating 360 degrees there are only 2 polygon vectices can be generated. 2 more polygon vertices are added on each lane nodes to construct the intersection node.
 2. Intersection lanes are parallel, and sometimes the lane width is the same. Under this situation, the average lane width will be used, and the generated polygon vertex will be set along the normal direction of the lane direction with the average lane width. In this case, there might be a risk that the intersection node will invade the physical unaccessible area. As such, it is suggested to avoid huge lane width changes between connected lanes. 
-
-
-## Navmesh generation logic
-
-
