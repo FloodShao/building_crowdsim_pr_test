@@ -17,7 +17,7 @@ crowd_sim:
     - {capacity: 5, set_area: [crossing], set_id: 5}
     - {capacity: 5, set_area: [on_road], set_id: 6}
   model_types:
-    - {animation: walk, animation_speed: 1.0, init_pose: [0, 0, 0, 0, 0, 0], model_uri: model://MaleVisitorPhone, typename: human}
+    - {animation: walk, animation_speed: 0.5, init_pose: [0, 0, 0, 0, 0, 0], model_uri: model://MaleVisitorPhone, typename: human}
   obstacle_set: {class: 1, file_name: L1_navmesh.nav, type: nav_mesh}
   states:
     - {final: 1, goal_set: -1, name: external_static, navmesh_file_name: ""}
@@ -29,14 +29,14 @@ crowd_sim:
     - {final: 0, goal_set: 5, name: crossing, navmesh_file_name: L1_navmesh.nav}
     - {final: 0, goal_set: 6, name: on_road, navmesh_file_name: L1_navmesh.nav}
   transitions:
-    - {Condition: {condition1: {distance: 0.5, type: goal_reached}, condition2: {dist: c, per_agent: true, type: timer, value: 120}, type: or}, Target: [{name: hub_west, weight: 1}], from: dfs, to: hub_west}
-    - {Condition: {distance: 0.5, type: goal_reached}, Target: [{name: crossing, weight: 1}, {name: dfs, weight: 0.5}, {name: hub_south, weight: 1}], from: hub_west, to: ""}
-    - {Condition: {distance: 0.5, type: goal_reached}, Target: [{name: crossing, weight: 1}, {name: hub_east, weight: 1}, {name: hub_north, weight: 1}, {name: hub_west, weight: 1}, {name: on_road, weight: 1}], from: crossing, to: ""}
-    - {Condition: {condition1: {distance: 0.5, type: goal_reached}, condition2: {dist: c, per_agent: true, type: timer, value: 20}, type: or}, Target: [{name: hub_west, weight: 1}], from: hub_south, to: hub_west}
-    - {Condition: {distance: 0.5, type: goal_reached}, Target: [{name: crossing, weight: 1}, {name: external_static, weight: 1}, {name: hub_east, weight: 1}], from: hub_north, to: ""}
-    - {Condition: {distance: 0.5, type: goal_reached}, Target: [{name: crossing, weight: 1}, {name: hub_north, weight: 1}, {name: on_road, weight: 1}], from: hub_east, to: ""}
-    - {Condition: {condition1: {distance: 0.5, type: goal_reached}, condition2: {dist: c, per_agent: true, type: timer, value: 30}, type: or}, Target: [{name: crossing, weight: 1}, {name: hub_east, weight: 1}], from: on_road, to: ""}
-  update_time_step: 0.1
+    - {Condition: {condition1: {distance: 1, type: goal_reached}, condition2: {dist: c, per_agent: true, type: timer, value: 120}, type: or}, Target: [{name: hub_west, weight: 1}], from: dfs, to: hub_west}
+    - {Condition: {distance: 1, type: goal_reached}, Target: [{name: crossing, weight: 1}, {name: dfs, weight: 0.5}, {name: hub_south, weight: 1}], from: hub_west, to: ""}
+    - {Condition: {distance: 1, type: goal_reached}, Target: [{name: crossing, weight: 1}, {name: hub_east, weight: 1}, {name: hub_north, weight: 1}, {name: hub_west, weight: 1}, {name: on_road, weight: 1}], from: crossing, to: ""}
+    - {Condition: {condition1: {distance: 1, type: goal_reached}, condition2: {dist: c, per_agent: true, type: timer, value: 20}, type: or}, Target: [{name: hub_west, weight: 1}], from: hub_south, to: hub_west}
+    - {Condition: {distance: 1, type: goal_reached}, Target: [{name: crossing, weight: 1}, {name: external_static, weight: 1}, {name: hub_east, weight: 1}], from: hub_north, to: ""}
+    - {Condition: {distance: 1, type: goal_reached}, Target: [{name: crossing, weight: 1}, {name: hub_north, weight: 1}, {name: on_road, weight: 1}], from: hub_east, to: ""}
+    - {Condition: {condition1: {distance: 1, type: goal_reached}, condition2: {dist: c, per_agent: true, type: timer, value: 30}, type: or}, Target: [{name: crossing, weight: 1}, {name: hub_east, weight: 1}], from: on_road, to: ""}
+  update_time_step: 0.5
 levels:
   L1:
     doors:
